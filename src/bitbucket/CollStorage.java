@@ -102,8 +102,15 @@ public class CollStorage implements MainActions{
         }
     }
 
-    int input() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        return Integer.parseInt(br.readLine());
+    int input()  {
+        int x = -1;
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            x = Integer.parseInt(br.readLine());
+        } catch (NumberFormatException | IOException e) {
+            System.out.println("Wrong input. Not integer");
+            e.printStackTrace();
+        }
+        return x;
     }
 }
